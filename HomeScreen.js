@@ -18,53 +18,53 @@ import { cats, dogs } from './breeds'
 // breed data as a prop.
 
 export default class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'By Breed'
-  }
+	static navigationOptions = {
+		title: 'By Breed'
+	}
 
-  constructor(props) {
-    super(props)
+	constructor(props) {
+		super(props)
 
-    this.state = {
-      selectedIndex: 0
-    }
-  }
+		this.state = {
+			selectedIndex: 0
+		}
+	}
 
-  render() {
-    // You'll need this to navigate to DetailScreen
-    const { navigate } = this.props.navigation
-    return (
-      <View style={styles.container}>
-        <FlatList 
-          style={styles.list}
-          data={cats}
-          renderItem={({item}) => <BreedNameCell onPress={() => console.log('Need to implement nav')} item={item} />}
-          keyExtractor={(item, index) => `${index}-${item.breed}`}
-        />
-      </View>
-    );
-  }
+	render() {
+		// You'll need this to navigate to DetailScreen
+		const { navigate } = this.props.navigation
+		return (
+			<View style={styles.container}>
+				<FlatList 
+					style={styles.list}
+					data={cats}
+					renderItem={({item}) => <BreedNameCell onPress={() => console.log('Need to implement nav')} item={item} />}
+					keyExtractor={(item, index) => `${index}-${item.breed}`}
+				/>
+			</View>
+		);
+	}
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  list: {
-    flex: 1,
-    width: '100%'
-  },
-  cell: {
-    width: '100%'
-  },
-  separator: {
-    
-  },
-  segmentedControl: {
-    width: 150,
-    margin: 10
-  }
+	container: {
+		flex: 1,
+		backgroundColor: '#fff',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+	list: {
+		flex: 1,
+		width: '100%'
+	},
+	cell: {
+		width: '100%'
+	},
+	separator: {
+		
+	},
+	segmentedControl: {
+		width: 150,
+		margin: 10
+	}
 });

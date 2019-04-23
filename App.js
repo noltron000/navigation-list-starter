@@ -6,8 +6,8 @@ import DetailScreen from './DetailScreen'
 // This stack contains two Screens
 // Go to HomeScreen.js
 const MainNavigator = createStackNavigator({
-  Home: { screen: HomeScreen }, // Displays  list of animals
-  Detail: { screen: DetailScreen } // Displays Animal details 
+	Home: { screen: HomeScreen }, // Displays	list of animals
+	Detail: { screen: DetailScreen } // Displays Animal details 
 })
 
 const App = createAppContainer(MainNavigator)
